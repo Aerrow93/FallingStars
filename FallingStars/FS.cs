@@ -22,5 +22,6 @@ namespace FallingStars
         public double? Latitude { get; set; }
         public double? Longitude { get; set; }
         public string Year { get; set; }
+        public string Fall { get; set; }
     }
 }

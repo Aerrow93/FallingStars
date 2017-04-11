@@ -28,6 +28,14 @@ namespace FallingStars
 
             fsListView = FindViewById<ListView>(Resource.Id.fsListView);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
+
+            fsListView.ItemClick += FSClicked;
+        }
+
+        protected override bool OnCreateOptionsMenu(IMenu menu)
+        {
+            MenuInflater.Inflate(Resource.Menu.FSListViewMenu, menu);
+            return base.OnCreateOptionsMenu(menu);
         }
 
         public async void DownloadFSListAsync()
@@ -41,6 +49,11 @@ namespace FallingStars
             fsListView.Adapter = fsListAdapter;
         }
 
+        protected void FSClicked(object sender, ListView.ItemClickEventArgs e)
+        {
+            FSClicked fs = result.fsListData[(int)e.Id];
+            Console.Out.WriteLine("Falling Star Clicked: Name is {0}", fs.Name);
+        }
     }
 }
 

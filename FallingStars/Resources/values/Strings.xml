@@ -5,4 +5,9 @@
   <string name="fsName">Name</string>
   <string name="fsMass">Mass</string>
   <string name="fsYear">Year</string>
+  <string name="fsRecclass">Recclass</string>
+  <string name="fsNameType">NameType</string>
+  <string name="fsLatitude">Latitude</string>
+  <string name="fsLongitude">Longitude</string>
+  <string name="fsFall">Fall</string>
 </resources>

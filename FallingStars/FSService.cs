@@ -40,15 +40,38 @@ namespace FallingStars
                     fsListData.Add(fs);
                 }
                 return fsListData;
-            } else
+            }
+            else
             {
                 Console.Out.WriteLine("Failed to fetch data. Try again later!");
                 return null;
             }
+        }
 
-            
+        public async void DownloadFSListAsync()
+        {
+            FSService service = new FSService();
+            if (!service.isConnected(this))
+            {
+                Toast toast = Toast.MakeText(this, "Not connected to internet. Please check your device network settings.", ToastLength.Short);
+                toast.Show();
+            }
+            else
+            {
+                progressBar.Visibility = ViewStates.Visible;
+                fsListData = await service.GetFSListAsync();
+                progressBar.Visibility = ViewStates.Gone;
 
+                fsListAdapter = new FSListViewAdapter(this, fsListData);
+                fsListView.Adapter = fsListAdapter;
+            }
+        }
 
+        public bool isConnected(Context activity)
+        {
+            var connectivityManager = (connectivityManager)activity.GetSystemService(Context.ConnectivityService);
+            var activeConnection = connectivityManager.ActiveNetworkInfo;
+            return (null != activeConnection && activeConnection.IsConnected);
         }
     }
 }
