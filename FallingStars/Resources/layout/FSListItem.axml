@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="wrap_content"
+    p1:id="@+id/relativeLayout1"
+    p1:padding="5dp">
+    <LinearLayout
+        p1:orientation="vertical"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="369.0dp"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/linearLayout1"
+        p1:layout_centerVertical="true">
+        <TextView
+            p1:text="@string/fsName"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/nameTextView"
+            p1:textSize="20sp"/>
+        <TextView
+            p1:text="@string/fsMass"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/massTextView"
+            p1:textSize="20sp"/>
+        <TextView
+            p1:text="@string/fsYear"
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/yearTextView"
+            p1:textSize="20sp" />
+    </LinearLayout>
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/nameInfoTextView"
+        p1:textSize="18sp"
+        p1:layout_alignParentRight="true" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/massInfoTextView"
+        p1:textSize="18sp"
+        p1:layout_alignParentRight="true" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/yearInfoTextView"
+        p1:textSize="18sp"
+        p1:layout_alignParentRight="true" />
+</RelativeLayout>
