@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 
 using Newtonsoft.Json;
@@ -10,6 +11,7 @@ using Android.Widget;
 using Android.OS;
 using Android.Views;
 using Android.Content.PM;
+using Android.Content;
 
 namespace FallingStars
 {
@@ -43,11 +45,11 @@ namespace FallingStars
             fsListView.ItemClick += FSClicked;
         }
 
-        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
-        {
-            inflater.Inflate(Resource.Menu.FSListViewMenu, menu);
-            base.OnCreateOptionsMenu(menu, inflater);
-        }
+        //public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
+        //{
+        //    inflater.Inflate(Resource.Menu.FSListViewMenu, menu);
+        //    base.OnCreateOptionsMenu(menu, inflater);
+        //}
 
         public async void DownloadFSListAsync()
         {

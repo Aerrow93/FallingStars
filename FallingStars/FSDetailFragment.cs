@@ -1,19 +1,14 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
-using Newtonsoft;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 
 using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android.Content.PM;
 
 namespace FallingStars
 {
@@ -66,6 +61,9 @@ namespace FallingStars
             _latText = view.FindViewById<TextView>(Resource.Id.latTextView);
             _longText = view.FindViewById<TextView>(Resource.Id.longTextView);
 
+            _mapImageButton = view.FindViewById<ImageButton>(Resource.Id.mapImageButton);
+            _mapImageButton.Click += MapClicked;
+
             UpdateUI();
             return view;
         }
@@ -80,6 +78,25 @@ namespace FallingStars
             _fallText.Text = _fs.Fall;
             _latText.Text = _fs.Latitude.ToString();
             _longText.Text = _fs.Longitude.ToString();
+        }
+
+        protected void MapClicked(object sender, EventArgs e)
+        {
+            Android.Net.Uri geoUri;
+
+            geoUri = Android.Net.Uri.Parse(String.Format("geo:{0},{1}", _fs.Latitude, _fs.Longitude));
+
+            Intent mapIntent = new Intent(Intent.ActionView, geoUri);
+            PackageManager packageManager = Activity.PackageManager;
+            IList<ResolveInfo> activities = packageManager.QueryIntentActivities(mapIntent, 0);
+
+            if(activities.Count == 0)
+            {
+                Toast.MakeText(activity, "No map app available.", ToastLength.Short).Show();
+            } else
+            {
+                StartActivity(mapIntent);
+            }
         }
     }
 }
