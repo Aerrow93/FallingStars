@@ -53,6 +53,11 @@ namespace FallingStars
         {
             FSClicked fs = result.fsListData[(int)e.Id];
             Console.Out.WriteLine("Falling Star Clicked: Name is {0}", fs.Name);
+
+            Intent fsDetailIntent = new Intent(this, typeof(FSDetailActivity));
+            string fsJson = JsonConvert.SerializeObject(fs);
+            fsDetailIntent.PutExtra("fs", fsJson);
+            StartActivity(fsDetailIntent);
         }
     }
 }

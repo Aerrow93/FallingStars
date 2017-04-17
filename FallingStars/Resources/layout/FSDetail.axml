@@ -22,7 +22,7 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="374.0dp"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView2" />
+            p1:id="@+id/nameTextView" />
         <TextView
             p1:text="@string/fsRecclass"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -34,7 +34,7 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView4" />
+            p1:id="@+id/recclassTextView" />
         <TextView
             p1:text="@string/fsNameType"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -46,7 +46,7 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView6" />
+            p1:id="@+id/nameTypeTextView" />
         <TextView
             p1:text="@string/fsMass"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -58,7 +58,7 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView8" />
+            p1:id="@+id/massTextView" />
         <TextView
             p1:text="@string/fsYear"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -70,7 +70,7 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView10" />
+            p1:id="@+id/yearTextView" />
         <TextView
             p1:text="@string/fsFall"
             p1:textAppearance="?android:attr/textAppearanceLarge"
@@ -82,7 +82,12 @@
             p1:textAppearance="?android:attr/textAppearanceMedium"
             p1:layout_width="match_parent"
             p1:layout_height="wrap_content"
-            p1:id="@+id/textView12" />
+            p1:id="@+id/fallTextView" />
+        <Space
+            p1:layout_width="match_parent"
+            p1:layout_height="wrap_content"
+            p1:id="@+id/space1"
+            p1:layout_marginBottom="18.0dp" />
         <TableLayout
             p1:minWidth="25dp"
             p1:minHeight="25dp"
@@ -105,15 +110,33 @@
             </TableRow>
             <TableRow
                 p1:id="@+id/tableRow2">
-                <EditText
-                    p1:inputType="numberDecimal|numberSigned"
-                    p1:layout_column="0"
-                    p1:id="@+id/" />
-                <EditText
-                    p1:inputType="numberDecimal|numberSigned"
-                    p1:layout_column="1"
-                    p1:id="@+id/" />
+                <TextView
+                    p1:text="Medium Text"
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:id="@+id/latTextView" />
+                <TextView
+                    p1:text="Medium Text"
+                    p1:textAppearance="?android:attr/textAppearanceMedium"
+                    p1:id="@+id/longTextView" />
             </TableRow>
         </TableLayout>
+        <Space
+            p1:layout_width="match_parent"
+            p1:layout_height="15.0dp"
+            p1:id="@+id/space2" />
+        <LinearLayout
+            p1:orientation="horizontal"
+            p1:minWidth="25px"
+            p1:minHeight="25px"
+            p1:layout_width="match_parent"
+            p1:layout_height="50.0dp"
+            p1:id="@+id/linearLayout3"
+            p1:layout_marginBottom="21.0dp">
+            <ImageButton
+                p1:src="@android:drawable/ic_map"
+                p1:id="@+id/imageButton1"
+                p1:layout_width="48.5dp"
+                p1:layout_height="match_parent" />
+        </LinearLayout>
     </LinearLayout>
 </ScrollView>
