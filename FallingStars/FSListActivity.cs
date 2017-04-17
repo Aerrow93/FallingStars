@@ -8,12 +8,12 @@ using Newtonsoft.Json.Serialization;
 using Android.App;
 using Android.Widget;
 using Android.OS;
-
 using Android.Views;
+using Android.Content.PM;
 
 namespace FallingStars
 {
-    [Activity(Label = "FallingStars", MainLauncher = true, Icon = "@drawable/icon")]
+    [Activity(Label = "FallingStars", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class FSListActivity : Activity
     {
         private ListView fsListView;
@@ -32,10 +32,10 @@ namespace FallingStars
             fsListView.ItemClick += FSClicked;
         }
 
-        protected override bool OnCreateOptionsMenu(IMenu menu)
+        public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
         {
-            MenuInflater.Inflate(Resource.Menu.FSListViewMenu, menu);
-            return base.OnCreateOptionsMenu(menu);
+            inflater.Inflate(Resource.Menu.FSListViewMenu, menu);
+            base.OnCreateOptionsMenu(menu, inflater);
         }
 
         public async void DownloadFSListAsync()
@@ -51,7 +51,7 @@ namespace FallingStars
 
         protected void FSClicked(object sender, ListView.ItemClickEventArgs e)
         {
-            FSClicked fs = result.fsListData[(int)e.Id];
+            FS fs = result.fsListData[(int)e.Id];
             Console.Out.WriteLine("Falling Star Clicked: Name is {0}", fs.Name);
 
             Intent fsDetailIntent = new Intent(this, typeof(FSDetailActivity));

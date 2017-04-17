@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:minWidth="25px"
+    p1:minHeight="25px"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+    p1:id="@+id/scrollView1">
+  <LinearLayout
+      p1:orientation="vertical"
+      p1:layout_width="match_parent"
+      p1:layout_height="match_parent"
+      p1:id="@+id/linearLayout1"
+      p1:padding="5dp">
+    <TextView
+        p1:text="@string/fsName"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="371.5dp"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView1" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="374.0dp"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/nameTextView" />
+    <TextView
+        p1:text="@string/fsRecclass"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView3" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/recclassTextView" />
+    <TextView
+        p1:text="@string/fsNameType"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView5" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/nameTypeTextView" />
+    <TextView
+        p1:text="@string/fsMass"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView7" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/massTextView" />
+    <TextView
+        p1:text="@string/fsYear"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView9" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/yearTextView" />
+    <TextView
+        p1:text="@string/fsFall"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView11" />
+    <TextView
+        p1:text="Medium Text"
+        p1:textAppearance="?android:attr/textAppearanceMedium"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/fallTextView" />
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/space1"
+        p1:layout_marginBottom="18.0dp" />
+    <TableLayout
+        p1:minWidth="25dp"
+        p1:minHeight="25dp"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/tableLayout1"
+        p1:stretchColumns="*">
+      <TableRow
+          p1:id="@+id/tableRow1">
+        <TextView
+            p1:text="@string/fsLatitude"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_column="0"
+            p1:id="@+id/textView21" />
+        <TextView
+            p1:text="@string/fsLongitude"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:layout_column="1"
+            p1:id="@+id/textView22" />
+      </TableRow>
+      <TableRow
+          p1:id="@+id/tableRow2">
+        <TextView
+            p1:text="Medium Text"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:id="@+id/latTextView" />
+        <TextView
+            p1:text="Medium Text"
+            p1:textAppearance="?android:attr/textAppearanceMedium"
+            p1:id="@+id/longTextView" />
+      </TableRow>
+    </TableLayout>
+    <Space
+        p1:layout_width="match_parent"
+        p1:layout_height="15.0dp"
+        p1:id="@+id/space2" />
+    <LinearLayout
+        p1:orientation="horizontal"
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="match_parent"
+        p1:layout_height="50.0dp"
+        p1:id="@+id/linearLayout3"
+        p1:layout_marginBottom="21.0dp">
+      <ImageButton
+          p1:src="@drawable/ic_map"
+          p1:id="@+id/mapImageButton"
+          p1:layout_width="48.5dp"
+          p1:layout_height="match_parent" />
+    </LinearLayout>
+  </LinearLayout>
+</ScrollView>

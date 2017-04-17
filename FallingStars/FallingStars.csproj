@@ -53,10 +53,11 @@
   <ItemGroup>
     <Compile Include="FS.cs" />
     <Compile Include="FSDetailActivity.cs" />
+    <Compile Include="FSDetailFragment.cs" />
     <Compile Include="FSListActivity.cs" />
+    <Compile Include="FSListFragment.cs" />
     <Compile Include="FSListViewAdapter.cs" />
     <Compile Include="FSService.cs" />
-    <Compile Include="MainActivity.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -68,6 +69,12 @@
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\FSDetail.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FSDetailFragment.axml">
+      <SubType>Designer</SubType>
+    </AndroidResource>
+    <AndroidResource Include="Resources\layout\FSListFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
   </ItemGroup>
@@ -197,6 +204,9 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\drawable-hdpi\ic_map.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\ic_map.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

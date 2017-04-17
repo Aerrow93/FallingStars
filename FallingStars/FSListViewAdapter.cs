@@ -12,10 +12,10 @@ using Android.Widget;
 
 namespace FallingStars
 {
-    class FSListViewAdapter : BaseAdapter<FallingStarsInfo>
+    class FSListViewAdapter : BaseAdapter<FS>
     {
         private readonly Activity context;
-        private List<FallingStarsInfo> fsListData;
+        private List<FS> fsListData;
 
         public FSListViewAdapter(Activity _context, List<FS> _fsListData)
             : base()
@@ -40,19 +40,20 @@ namespace FallingStars
             }
         }
 
-        public override View GetView (int position, View convertView, ViewGroup parent)
+        public override View GetView(int position, View convertView, ViewGroup parent)
         {
             var view = convertView;
-            if(view == null)
+            if (view == null)
             {
                 view = context.LayoutInflater.Inflate(Resource.Layout.FSListItem, null);
             }
 
-            FallingStarsInfo fs = this[position];
+            FS fs = this[position];
             view.FindViewById<TextView>(Resource.Id.nameInfoTextView).Text = fs.Name;
             view.FindViewById<TextView>(Resource.Id.massInfoTextView).Text = fs.Mass;
             view.FindViewById<TextView>(Resource.Id.yearInfoTextView).Text = fs.Year;
-            
+
+            return view;
         }
     }
 }

@@ -5,11 +5,11 @@
         android:icon="@drawable/ic_search"
         android:title="Search"
         android:showAsAction="ifRoom" />
-  <item android:is="@+id/actionRefresh"
+  <item android:id="@+id/actionRefresh"
         android:icon="@drawable/ic_refresh"
         android:title="Refresh"
         android:showAsAction="ifRoom" />
-  <item android:is="@+id/actionSettings"
+  <item android:id="@+id/actionSettings"
         android:icon="@drawable/ic_settings"
         android:title="Settings"
         android:showAsAction="ifRoom" /> 
