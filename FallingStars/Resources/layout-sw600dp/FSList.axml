@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:p1="http://schemas.android.com/apk/res/android"
+    p1:layout_width="match_parent"
+    p1:layout_height="match_parent"
+	p1:minWidth="25px"
+	p1:minHeight="25px"
+    p1:id="@+id/relativeLayout1"
+	p1:orientation="horizontal">
+    <fragment
+		class="FallingStars.FSListFragment"
+        p1:layout_width="0dp"
+        p1:layout_height="match_parent"
+		p1:layout_weight="2"
+        p1:id="@+id/listFragment"
+		p1:paddingLeft="20dp"
+		p1:paddingRight="20dp" />
+	<FrameLayout
+		p1:minWidth="25px"
+		p1:minHeight="25px"
+		p1:layout_width="0dp"
+		p1:layout_height="match_parent"
+		p1:id="@+id/fsDetailLayout"
+		p1:layout_weight="3"
+		p1:paddingLeft="20dp"
+		p1:paddingRight="20dp" />
+</LinearLayout>

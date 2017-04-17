@@ -17,4 +17,11 @@
         p1:id="@+id/progressBar"
         p1:layout_centerInParent="true"
         p1:visibility="gone" />
+    <FrameLayout
+        p1:minWidth="25px"
+        p1:minHeight="25px"
+        p1:layout_width="wrap_content"
+        p1:layout_height="wrap_content"
+        p1:layout_above="@id/fsListView"
+        p1:id="@+id/frameLayout1" />
 </RelativeLayout>

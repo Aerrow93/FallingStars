@@ -65,6 +65,18 @@ namespace FallingStars
             base.OnCreateOptionsMenu(menu, inflater);
         }
 
+        public override bool OnOptionsItemSelected(IMenuItem item)
+        {
+            switch (item.ItemId)
+            {
+                case Resource.Id.actionRefresh:
+                    DownloadFSListAsync();
+                    return true;
+                default:
+                    return base.OnOptionsItemSelected(item);
+            }
+        }
+
         public override void OnListItemClick(ListView l, View v, int position, long id)
         {
             FS fs = fsListData[position];

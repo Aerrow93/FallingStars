@@ -77,6 +77,7 @@
     <AndroidResource Include="Resources\layout\FSListFragment.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
+    <AndroidResource Include="Resources\layout-sw600dp\FSList.axml" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\layout\FSList.axml">

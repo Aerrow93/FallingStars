@@ -16,6 +16,8 @@ namespace FallingStars
     [Activity(Label = "FallingStars", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class FSListActivity : Activity
     {
+        public static bool isDualMode = false;
+
         private ListView fsListView;
         private ProgressBar progressBar;
         private List<FS> fsListData;
@@ -25,6 +27,15 @@ namespace FallingStars
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.FSList);
+
+            var detailsLayout = FindViewById(Resource.Id.fsDetailLayout);
+            if (detailsLayout != null && detailsLayout.Visibility == ViewStates.Visible)
+            {
+                isDualMode = true;
+            } else
+            {
+                isDualMode = false;
+            }
 
             fsListView = FindViewById<ListView>(Resource.Id.fsListView);
             progressBar = FindViewById<ProgressBar>(Resource.Id.progressBar);
