@@ -14,7 +14,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace FallingStars
+namespace FallingStarsApp
 {
     class FSListFragment : ListFragment
     {

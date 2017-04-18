@@ -13,8 +13,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android;
 
-namespace FallingStars
+namespace FallingStarsApp
 {
     [Activity (Label = "FSDetailActivity")]
     class FSDetailActivity : Activity

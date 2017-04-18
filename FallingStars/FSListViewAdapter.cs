@@ -9,8 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android;
 
-namespace FallingStars
+namespace FallingStarsApp
 {
     class FSListViewAdapter : BaseAdapter<FS>
     {
@@ -32,7 +33,7 @@ namespace FallingStars
             }
         }
 
-        public override FallingStars this[int index]
+        public override FS this[int index]
         {
             get
             {

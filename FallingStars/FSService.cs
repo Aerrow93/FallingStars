@@ -1,5 +1,6 @@
 using System;
 using System.Threading.Tasks;
+using System.Net;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
@@ -14,7 +15,7 @@ using Android.Content;
 using Android.Net;
 
 
-namespace FallingStars
+namespace FallingStarsApp
 {
     class FSService
     {

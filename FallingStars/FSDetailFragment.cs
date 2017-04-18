@@ -1,16 +1,15 @@
-using System;
-using System.Collections.Generic;
 
-using Newtonsoft.Json;
 
 using Android.App;
 using Android.Content;
+using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using Android.Content.PM;
+using System;
+using System.Collections.Generic;
 
-namespace FallingStars
+namespace FallingStarsApp
 {
     class FSDetailFragment : Fragment
     {
