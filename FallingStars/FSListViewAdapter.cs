@@ -18,11 +18,12 @@ namespace FallingStars
         private readonly Activity context;
         private List<FS> fsListData;
 
-        public FSListViewAdapter(Activity _context, List<FS> _fsListData)
-            : base()
+        public FSListViewAdapter (Activity _context, List<FS> _fsListData)
         {
-            this.context = _context;
-            this.fsListData = _fsListData;
+            //:base(){
+            //    this.context = _context;
+            //    this.fsListData = _fsListData;
+            //}
         }
 
         public override int Count
@@ -33,6 +34,11 @@ namespace FallingStars
             }
         }
 
+        public override long GetItemId(int position)
+        {
+            return position; 
+        }
+
         public override FS this[int index]
         {
             get
@@ -40,21 +46,5 @@ namespace FallingStars
                 return fsListData[index];
             }
         }
-
-        public override View GetView(int position, View convertView, ViewGroup parent)
-        {
-            var view = convertView;
-            if (view == null)
-            {
-                view = context.LayoutInflater.Inflate(Resource.Layout.FSListItem, null);
-            }
-
-            FS fs = this[position];
-            view.FindViewById<TextView>(Resource.Id.nameInfoTextView).Text = fs.Name;
-            view.FindViewById<TextView>(Resource.Id.massInfoTextView).Text = fs.Mass;
-            view.FindViewById<TextView>(Resource.Id.yearInfoTextView).Text = fs.Year;
-
-            return view;
-        }
-    }
+    } 
 }

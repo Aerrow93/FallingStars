@@ -1,19 +1,18 @@
 using System;
 using System.Threading.Tasks;
-using System.Net;
 using System.Net.Http;
 using System.Collections.Generic;
 using System.Net.Http.Headers;
 using System.Linq;
-using System.Text;
 
 using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
-using Newtonsoft.Json.Serialization;
 
 using Android.Content;
 using Android.Net;
-
+using Android.Widget;
+using Android.OS;
+using Android.Views;
 
 namespace FallingStars
 {
@@ -22,11 +21,15 @@ namespace FallingStars
         private const string GET_FS = "https://data.nasa.gov/resource/y77d-th95.json";
         private List<FS> fsListData = null;
 
+        private ListView fsListView;
+        private ProgressBar progressBar;
+        private FSListViewAdapter fsListAdapter;
+
         public async Task<List<FS>> GetFSListAsync()
         {
             HttpClient httpClient = new HttpClient();
 
-            httpClient.DefaultRequesetHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             HttpResponseMessage response = await httpClient.GetAsync(GET_FS);
             if (response != null || response.IsSuccessStatusCode)
             {
@@ -49,15 +52,16 @@ namespace FallingStars
             }
         }
 
-        public async void DownloadFSListAsync()
+        public async void DoanloadFSListAsync()
         {
             FSService service = new FSService();
+
             if (!service.isConnected(this))
             {
-                Toast toast = Toast.MakeText(this, "Not connected to internet. Please check your device network settings.", ToastLength.Short);
+                Toast toast = Toast.MakeText(this, "Not connected to internet. Please check your device network settings.",
+                    ToastLength.Short);
                 toast.Show();
-            }
-            else
+            } else
             {
                 progressBar.Visibility = ViewStates.Visible;
                 fsListData = await service.GetFSListAsync();
@@ -65,12 +69,13 @@ namespace FallingStars
 
                 fsListAdapter = new FSListViewAdapter(this, fsListData);
                 fsListView.Adapter = fsListAdapter;
+
             }
         }
 
         public bool isConnected(Context activity)
         {
-            var connectivityManager = (connectivityManager)activity.GetSystemService(Context.ConnectivityService);
+            var connectivityManager = (ConnectivityManager)activity.GetSystemService(Context.ConnectivityService);
             var activeConnection = connectivityManager.ActiveNetworkInfo;
             return (null != activeConnection && activeConnection.IsConnected);
         }

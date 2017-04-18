@@ -22,7 +22,7 @@ namespace FallingStars
 
         private ListView fsListView;
         private ProgressBar progressBar;
-        private List<FS> fsListData;
+        private List<FS> fsListData = null;
         private FSListViewAdapter fsListAdapter;
 
         protected override void OnCreate(Bundle savedInstanceState)
@@ -45,16 +45,10 @@ namespace FallingStars
             fsListView.ItemClick += FSClicked;
         }
 
-        //public override void OnCreateOptionsMenu(IMenu menu, MenuInflater inflater)
-        //{
-        //    inflater.Inflate(Resource.Menu.FSListViewMenu, menu);
-        //    base.OnCreateOptionsMenu(menu, inflater);
-        //}
-
         public async void DownloadFSListAsync()
         {
-            FSService service = new FSService();
             progressBar.Visibility = ViewStates.Visible;
+            FSService service = new FSService();
             fsListData = await service.GetFSListAsync();
             progressBar.Visibility = ViewStates.Gone;
 
@@ -64,7 +58,7 @@ namespace FallingStars
 
         protected void FSClicked(object sender, ListView.ItemClickEventArgs e)
         {
-            FS fs = result.fsListData[(int)e.Id];
+            FS fs = fsListData[(int)e.Id];
             Console.Out.WriteLine("Falling Star Clicked: Name is {0}", fs.Name);
 
             Intent fsDetailIntent = new Intent(this, typeof(FSDetailActivity));
