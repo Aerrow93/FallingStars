@@ -1,4 +1,9 @@
+using System;
+using System.Collections.Generic;
 
+using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
+using Newtonsoft.Json.Serialization;
 
 using Android.App;
 using Android.Content;
@@ -6,10 +11,8 @@ using Android.Content.PM;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
-using System;
-using System.Collections.Generic;
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     class FSDetailFragment : Fragment
     {

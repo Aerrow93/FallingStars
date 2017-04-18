@@ -15,7 +15,7 @@ using Android.Content;
 using Android.Net;
 
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     class FSService
     {

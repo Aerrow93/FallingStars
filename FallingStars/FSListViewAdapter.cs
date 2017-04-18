@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Android;
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     class FSListViewAdapter : BaseAdapter<FS>
     {

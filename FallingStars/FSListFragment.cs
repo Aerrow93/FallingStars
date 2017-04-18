@@ -13,15 +13,22 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Android;
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     class FSListFragment : ListFragment
     {
         private ProgressBar progressBar;
         private List<FS> fsListData;
         private FSListViewAdapter fsListAdapter;
+
         private Activity activity;
+        public override void OnAttach(Activity activity)
+        {
+            base.OnAttach (activity);
+            this.activity = activity;
+        }
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState)
         {
@@ -30,19 +37,15 @@ namespace FallingStarsApp
             return view;
         }
 
-        public override void OnAttach(Activity activity)
-        {
-            base.OnAttach (activity);
-            this.activity = activity;
-        }
-
         public async void DownloadFSListAsync()
         {
             FSService service = new FallingStars.FSService();
             if (!service.isConnected(activity))
             {
                 Toast toast = Toast.MakeText(activity, "Not connected to internet. Please check your device network settings.", ToastLength.Short);
-            } else
+                toast.Show();
+            }
+            else
             {
                 progressBar.Visibility = ViewStates.Visible;
                 fsListData = await service.GetFSListAsync();

@@ -15,7 +15,7 @@ using Android.Views;
 using Android.Widget;
 using Android;
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     [Activity (Label = "FSDetailActivity")]
     class FSDetailActivity : Activity
@@ -39,8 +39,6 @@ namespace FallingStarsApp
             FragmentTransaction ft = FragmentManager.BeginTransaction();
             ft.Add(Resource.Id.fsDetailLayout, detailFragment);
             ft.Commit();
-
         }
-
     }
 }

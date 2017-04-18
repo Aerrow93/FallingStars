@@ -13,7 +13,7 @@ using Android.Views;
 using Android.Content.PM;
 using Android.Content;
 
-namespace FallingStarsApp
+namespace FallingStars
 {
     [Activity(Label = "FallingStars", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = ScreenOrientation.Portrait)]
     public class FSListActivity : Activity
